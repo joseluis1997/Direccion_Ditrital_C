@@ -11,7 +11,10 @@ class Actividad extends Model
     protected $fillable = [
         'nombreAct',
         'fechaI',
+        'horaI',
         'fechaF',
+        'horaF',
         'descripcionA',
     ];
+    
 }

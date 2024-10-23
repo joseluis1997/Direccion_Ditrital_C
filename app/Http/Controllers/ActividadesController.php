@@ -30,9 +30,11 @@ class ActividadesController extends Controller
         //dd($request);
 
         $request->validate([
-            'nombreAct' => 'required|string',
+            'nombreAct' => 'required|string|max:255',
             'fechaI' => 'required|date',
+            'horaI' => 'required|date_format:H:i',
             'fechaF' => 'required|date',
+            'horaF' => 'required|date_format:H:i',
             'descripcionA' => 'required|string',
           ]);
           Actividad::create($request->all());

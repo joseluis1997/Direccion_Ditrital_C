@@ -12,12 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('actividades', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombreAct');
-            $table->string('fechaI');
-            $table->string('fechaF');
-            $table->string('descripcionA');
-            $table->timestamps();
+            $table->id(); // Campo ID autoincremental
+            $table->string('nombreAct'); // Nombre de la actividad
+            $table->date('fechaI'); // Fecha de inicio
+            $table->time('horaI'); // Hora de inicio
+            $table->date('fechaF'); // Fecha de fin
+            $table->time('horaF'); // Hora de fin
+            $table->text('descripcionA'); // Descripción de la actividad
+            $table->timestamps(); // Campos created_at y updated_at
         });
     }
 
