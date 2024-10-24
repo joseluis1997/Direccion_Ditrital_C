@@ -18,7 +18,7 @@ class Nucleo extends Model
 
     //relacionando de uno a muchos/
     //un nuclo tiene muchas unidades
-  // public function Unidades(){
-    //    return $this->hasMany(UnidadesE::class, 'id');
-   //}
+   public function Unidades(){
+        return $this->hasMany(UnidadesE::class, 'id_nucleo');
+   }
 }

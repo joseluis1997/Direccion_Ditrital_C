@@ -29,6 +29,9 @@
                     <x-nav-link href="{{ route('nucleos.index') }}" :active="request()->routeIs('nucleos.index')">
                         {{ __('Nucleos') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('UnidadesEducativas.index') }}" :active="request()->routeIs('unidades.index')">
+                        {{ __('Unidades Educativas') }}
+                    </x-nav-link>
                 </div>
             </div>
             <!-- Settings Dropdown -->

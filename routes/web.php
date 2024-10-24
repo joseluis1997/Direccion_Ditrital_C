@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfesoresController;
 use App\Http\Controllers\ActividadesController;
 use App\Http\Controllers\NucleosController;
+use App\Http\Controllers\UnidadesEducativasController   ;
 
 Route::get('/', function () {
     return view('welcome');
@@ -25,6 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', UserController::class);
     Route::resource('actividades', ActividadesController::class);
     Route::resource('nucleos', NucleosController::class);
+    Route::resource('UnidadesEducativas', UnidadesEducativasController::class);
 });
 
 require __DIR__.'/auth.php';
