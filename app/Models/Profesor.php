@@ -14,9 +14,17 @@ class Profesor extends Model
     protected $fillable = [
         'ci',
         'rda',
-        'nommbre',
+        'nombre',
         'apellidos',
         'celular',
         'correo',
+        'pdf_path',
+        'unidad_educativa_id'
     ];
+
+    public function unidadEducativa()
+    {
+        return $this->belongsTo(UnidadesE::class,'unidad_educativa_id','id');
+    }
+    
 }

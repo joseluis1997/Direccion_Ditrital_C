@@ -15,10 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('ci');
             $table->string('rda');
-            $table->string('nommbre');
+            $table->string('nombre');
             $table->string('apellidos');
             $table->string('celular');
             $table->string('correo');
+            $table->string('pdf_path')->nullable();
+            $table->foreignId('unidad_educativa_id')->constrained('unidades_ed')->onDelete('cascade'); // Relación con la tabla de unidades educativas
             $table->timestamps();
         });
     }

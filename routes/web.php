@@ -23,6 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('roles', RoleController::class);
     Route::resource('profesores', ProfesoresController::class);
+    // Ruta para mostrar el PDF
+    Route::get('profesores/{id}/pdf', [ProfesoresController::class, 'mostrarPdf'])->name('profesores.pdf');
     Route::resource('users', UserController::class);
     Route::resource('actividades', ActividadesController::class);
     Route::resource('nucleos', NucleosController::class);

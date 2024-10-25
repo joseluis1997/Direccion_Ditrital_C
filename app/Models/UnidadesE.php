@@ -24,5 +24,10 @@ class UnidadesE extends Model
     ];
     public function nucleo(){
         return $this->belongsTo(Nucleo::class, 'id_nucleo');
-   }
+    }
+
+    public function profesores()
+    {
+        return $this->hasMany(Profesor::class);
+    }
 }

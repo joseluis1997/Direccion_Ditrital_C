@@ -43,7 +43,8 @@ class NucleosController extends Controller
      */
     public function show(string $id)
     {
-       
+        $nucleo = Nucleo::with('unidades')->findOrFail($id); // Asegúrate de que tienes la relación 'unidades' en tu modelo Nucleo
+        return view('nucleos.show', compact('nucleo'));
     }
 
     /**
