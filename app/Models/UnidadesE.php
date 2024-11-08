@@ -30,4 +30,7 @@ class UnidadesE extends Model
     {
         return $this->hasMany(Profesor::class);
     }
+    public function estudiantes() {
+        return $this->hasMany(Estudiante::class);
+    }
 }

@@ -7,7 +7,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProfesoresController;
 use App\Http\Controllers\ActividadesController;
 use App\Http\Controllers\NucleosController;
-use App\Http\Controllers\UnidadesEducativasController   ;
+use App\Http\Controllers\UnidadesEducativasController;
+use App\Http\Controllers\EstudiantesController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,6 +30,11 @@ Route::middleware('auth')->group(function () {
     Route::resource('actividades', ActividadesController::class);
     Route::resource('nucleos', NucleosController::class);
     Route::resource('UnidadesEducativas', UnidadesEducativasController::class);
+    Route::resource('estudiantes', EstudiantesController::class);
+
+    //-----------REPORTES-------------//
+    Route::get('/estudiantes/reporte', [EstudiantesController::class, 'reporte'])->name('estudiantes.reporte');
+
 });
 
 require __DIR__.'/auth.php';
